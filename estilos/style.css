@@ -160,3 +160,14 @@ body{
     box-shadow: 0 5px 15px rgba(0, 0, 0.2);
 }
 
+
+@media screen and (max-width: 500px) {
+    .header-container {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    .container {
+      float: none;
+    }
+  }
