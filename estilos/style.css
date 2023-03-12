@@ -8,50 +8,82 @@
 }
 /* HEADER */
 .header-container{
-    height:10vh ;
-    width:800vh;
-    background-color: #60e1e0;
-    background-position: top;
-    background-size: contain;
-    display: flex;
-    flex-direction: column;
+    position: relative;
+    display:inline-flexbox;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    z-index: 1;
+}
 
+.header-container .header-card {
+    position:relative;
+    min-width: 150vh;
+    /*width: 280px;*/
+    height: 150px;
+    margin: 50px;    
+    box-shadow: 20px 20px 50px rgba(0, 0, 0.5);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(2px);
+}
+
+
+.header-container .header-card .content {
+    padding: 20px;
+    text-align: center;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 0, 5s;
+}
+.header-container .header-card:hover .header-content{
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.header-container .header-card .header-content h1 {
+       
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    padding: 8px 20px;
+    color: #ffff;
+    pointer-events: none;
+}
+
+.header-container .header-card .header-content h2 {
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    letter-spacing: 2px;
+    
+    margin-top: 15px;    
+    color: #ffff;
+    text-decoration: none;
+    border-radius: 20px;
+    
     
 }
 
-body {
-    display: flex;
+
+body{
+    display:-ms-flexbox;
     justify-content: center;
     align-items: center;
     min-width: 100vh;
-    /*background: #161623;*/
-    background: url('../images/img-fundo001.jpg') no-repeat;
+    background: #161623;
+    /*background: url('../images/img-fundo001.jpg') no-repeat;*/
     background-position:center;
-    background-size: 99%;    
+    background-size: 100%; 
 }
 
-/* Style the header with a grey background and some padding */
-.header {
-    overflow: hidden;
-    background-color: #f1f1f1;
-    padding: 20px 10px;
-  }
-
-/* Float the link section to the right */
-.header-right {
-    float:right;
-  }
-/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
-@media screen and (max-width: 500px) {
-    .header a {
-      float: none;
-      display: block;
-      text-align: left;
-    }
-    .header-right {
-      float: none;
-    }
-  }
 .container {
     position: relative;
     display: flex;
@@ -83,7 +115,7 @@ body {
     padding: 20px;
     text-align: center;
     transform: translateY(100px);
-    opacity: 0;
+    opacity: 0.1;
     transition: 0, 5s;
 }
 
@@ -92,11 +124,12 @@ body {
     opacity: 1;
 }
 
+
 .container .card .content h2 {
     position: absolute;
     top: -80px;
     right: 30px;
-    font-size: 8em;
+    font-size: 4em;
     color: rgba(255, 255, 255, 0.05);
     pointer-events: none;
 }
@@ -118,7 +151,7 @@ body {
     position: relative;
     display: inline-block;
     padding: 8px 20px;
-    margin-top: 15px;
+    margin-top: 20px;    
     background: #ffff;
     color: #000;
     text-decoration: none;
